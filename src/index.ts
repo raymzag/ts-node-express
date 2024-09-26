@@ -20,7 +20,8 @@ const port = process.env.PORT || 3000;
 /* Define a route for the root path ("/")
  using the HTTP GET method */
 app.get("/", (req: Request, res: Response) => {
-  res.send("Express + TypeScript Server");
+  // res.send("Express + TypeScript Server");
+  res.sendFile(__dirname + '/payment.html');
 });
 
 /* Start the Express app and listen
