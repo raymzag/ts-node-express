@@ -3,6 +3,7 @@
 <body>
 <script src='https://cdn.pinpayments.com/pin.v2.js'></script>
 <script src="http://0.0.0.0:8000/api.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
 
@@ -15,7 +16,7 @@ $(function() {
   //
   // Be sure to use your live publishable key with the live api, and
   // your test publishable key with the test api.
-  var pinApi = new Pin.Api('pk_0q2C4cjBFvN6JQ9TMpDwOQ', 'test');  
+  var pinApi = new Pin.Api('your_publishable_key', 'test');
 
 
   var form = $('form.pin'),
@@ -101,7 +102,7 @@ Make a payment to<br>
 ADAXA Pty Ltd
 </h1>
 </header>
-<form action='#' class='pin' method='post'>
+<form action='/create-charge' class='pin' method='post'>
 <input type="hidden" name="source" id="source" autocomplete="off">
 
   <div class='errors' style='display:none'>
@@ -116,7 +117,7 @@ ADAXA Pty Ltd
 <span class="amount">1000</span>
 <span class="currency-hint apm--currency-code">AUD</span>
 </p>
-<input type="hidden" name="charge[amount]" id="charge_amount" value="$1000.00" autocomplete="off">
+<input type="hidden" name="charge[amount]" id="charge_amount" value="1000" autocomplete="off">
 </fieldset>
 <fieldset>
   <label>Description</label>
